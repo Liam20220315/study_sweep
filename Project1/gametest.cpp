@@ -77,17 +77,47 @@ void printf_struct2(ms *ptr)
 
 }
 
+void printf_char_arrs(void)
+{
+	char arr1[] = "**********";
+	char arr2[] = "##########";
+	char arr3[] = "..........";
+	char* arr[] = { arr1,arr2,arr3 };
+	int i;
+	int len1 = sizeof(arr1) / sizeof(arr1[0]);
+	for (i = 0; i < len1; i++)
+	{
+
+		printf(" %s", (arr[i]));
+		printf("\n");
+	}
+}
+
+void printf_int_arrs(void)
+{
+	int arr1[] = { 1,2,3,2,3,1,2,4,2,1,3,4 };
+	int arr2[] = { 2,3,1,2,4,3,1,2,4,1,2,4 };
+	int arr3[] = { 3,1,2,3,1,2,3,4,1,2,4,1 };
+	int* arr[] = { arr1,arr2,arr3 };
+	int i;
+	int j;
+	int len1 = sizeof(arr1) / sizeof(arr1[0]);
+	int len2 = sizeof(arr) / sizeof(arr[0]);
+	for (i = 0; i < len2; i++)
+	{
+		for (j = 0;  j< len1; j++)
+		{
+			printf(" %d", *(arr[i]+j));
+		}
+		
+		printf("\n");
+	}
+
+
+}
+
 int main()
 {
-	//char arr[] = "1234567890qwertyuiopasdfghjklzxcvbnm";
-
-	//int ret = my_strlen(arr);
-	ms a = {"hesongqing","ÄÐ",35};
-	printf_struct1(a);
-	printf("\n");
-	printf_struct2(&a);
-	//printf("×Ö·û´®³¤¶È:%d \n", ret);
-
-	//test();
+	printf_int_arrs();
 	return 0;
 }
