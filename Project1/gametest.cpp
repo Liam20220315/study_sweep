@@ -42,9 +42,24 @@ void test()
 	} while (input);
 
 }
+
+int my_strlen(char* arr)
+{
+	char* start_adr = arr;
+	char* end_adr = arr;
+	while (*end_adr != '\0')
+	{
+		end_adr++;
+	}
+	return end_adr - start_adr;
+}
 int main()
 {
+	char arr[] = "1234567890qwertyuiopasdfghjklzxcvbnm";
 
-	test();
+	int ret = my_strlen(arr);
+	printf("×Ö·û´®³¤¶È:%d \n", ret);
+
+	//test();
 	return 0;
 }
