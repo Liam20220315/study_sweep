@@ -76,7 +76,7 @@ void printf_struct2(ms *ptr)
 	printf("age: %d \n", ptr->age);
 
 }
-
+//指针数组
 void printf_char_arrs(void)
 {
 	char arr1[] = "**********";
@@ -92,7 +92,7 @@ void printf_char_arrs(void)
 		printf("\n");
 	}
 }
-
+//指针数组
 void printf_int_arrs(void)
 {
 	int arr1[] = { 1,2,3,2,3,1,2,4,2,1,3,4 };
@@ -115,9 +115,27 @@ void printf_int_arrs(void)
 
 
 }
+//数组指针----int (*p)[3]表示数组首地址
+void printf_int_arrx(int (*p)[3],int row,int col)
+{
+	int i,j;
+	for ( i = 0; i < row; i++)
+	{
+		for (j = 0;  j < col; j++)
+		{
+			//printf("%d ", *(*(p+i)+j));
+			printf("%d ", (*(p + i))[j]);
+			
+		}
+		printf("\n");
+	}
 
+
+}
 int main()
 {
-	printf_int_arrs();
+	int arr[2][3] = { {1,1,1},{2,2,2} };
+
+	printf_int_arrx(arr,2,3);
 	return 0;
 }
