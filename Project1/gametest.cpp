@@ -53,12 +53,40 @@ int my_strlen(char* arr)
 	}
 	return end_adr - start_adr;
 }
+
+typedef struct message
+{
+	char name[20];
+	char sex[5];
+	int age;
+}ms;
+
+void printf_struct1(ms temp)
+{
+	printf("name: %s \n", temp.name);
+	printf("sex: %s \n", temp.sex);
+	printf("age: %d \n", temp.age);
+
+}
+
+void printf_struct2(ms *ptr)
+{
+	printf("name: %s \n", ptr->name);
+	printf("sex: %s \n", ptr->sex);
+	printf("age: %d \n", ptr->age);
+
+}
+
 int main()
 {
-	char arr[] = "1234567890qwertyuiopasdfghjklzxcvbnm";
+	//char arr[] = "1234567890qwertyuiopasdfghjklzxcvbnm";
 
-	int ret = my_strlen(arr);
-	printf("×Ö·û´®³¤¶È:%d \n", ret);
+	//int ret = my_strlen(arr);
+	ms a = {"hesongqing","ÄÐ",35};
+	printf_struct1(a);
+	printf("\n");
+	printf_struct2(&a);
+	//printf("×Ö·û´®³¤¶È:%d \n", ret);
 
 	//test();
 	return 0;
